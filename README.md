@@ -1,7 +1,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>พูดแทนใจ – Botnoi Voice</title>
+  <title>พูดแทนใจ Your Voice Matters</title>
 
   <!-- Google Fonts: Prompt + Kanit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
-    // ตั้งค่าฟอนต์หลักใน Tailwind
     tailwind.config = {
       theme: {
         extend: {
@@ -49,84 +48,30 @@
       <header class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-6">
         <div class="flex-shrink-0">
           <img src="https://kkclassvip.com/wp-content/uploads/2025/05/heart-botnoi-voice.png"
-               alt="Botnoi Voice Logo"
+               alt="Your Voice Matters Logo"
                class="w-24 h-auto mx-auto md:mx-0">
         </div>
         <div class="flex-1 text-center md:text-left">
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold font-kanit text-purple-700 flex items-center justify-center md:justify-start gap-2">
-            🗣️ พูดแทนใจ – Botnoi Voice
+            🗣️ พูดแทนใจ – Your Voice Matters
           </h1>
+          <p class="mt-1 text-xs sm:text-sm text-pink-500 font-semibold uppercase tracking-wide">
+            Text-to-Voice สำหรับผู้พิการทางการพูด (ไม่ต้องใช้ API)
+          </p>
           <p class="mt-2 text-sm sm:text-base text-gray-600">
-            ระบบช่วยสื่อสารสำหรับผู้พิการทางการพูด ใช้ปุ่มข้อความหรือพิมพ์เองแล้วให้บอทพูดแทนใจคุณ 💜
+            กดปุ่มข้อความ หรือพิมพ์เอง แล้วให้ระบบพูดแทนใจคุณแบบทันที ใช้งานง่ายทั้งมือถือและคอมพิวเตอร์ 💜
           </p>
         </div>
       </header>
 
-      <!-- การตั้งค่า Token + เสียง -->
-      <section class="mb-6">
-        <div class="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-100 rounded-2xl p-4 sm:p-5 flex flex-col gap-4">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-600 text-lg">🔑</span>
-            <h2 class="font-semibold text-gray-800 text-base sm:text-lg">ตั้งค่า Botnoi API Token</h2>
-          </div>
-
-          <div class="grid md:grid-cols-[2fr,1fr] gap-4">
-            <!-- Token input -->
-            <div>
-              <label for="tokenInput" class="block text-xs sm:text-sm text-gray-600 mb-1">
-                ใส่ Botnoi API Token ของคุณ
-              </label>
-              <div class="relative">
-                <input
-                  id="tokenInput"
-                  type="password"
-                  class="w-full border border-pink-200 rounded-full px-4 py-2 pr-24 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 bg-white/80"
-                  placeholder="กรอก Token ที่นี่..."
-                />
-                <button
-                  type="button"
-                  id="toggleTokenVisibility"
-                  class="absolute inset-y-0 right-10 flex items-center text-xs text-purple-500 hover:text-purple-700"
-                >
-                  👁 แสดง
-                </button>
-                <button
-                  type="button"
-                  id="saveTokenBtn"
-                  class="absolute inset-y-0 right-0 flex items-center px-3 text-xs font-medium text-white bg-gradient-to-r from-pink-400 to-purple-400 rounded-full hover:from-pink-500 hover:to-purple-500"
-                >
-                  บันทึก
-                </button>
-              </div>
-              <p class="mt-1 text-[11px] sm:text-xs text-gray-500">
-                * Token จะถูกเก็บไว้ในเบราว์เซอร์ของคุณเท่านั้น (localStorage)
-              </p>
-            </div>
-
-            <!-- เลือกเสียง -->
-            <div>
-              <label for="speakerSelect" class="block text-xs sm:text-sm text-gray-600 mb-1">
-                เลือกเสียงพูด (ไทย/อังกฤษ)
-              </label>
-              <select
-                id="speakerSelect"
-                class="w-full border border-purple-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300 bg-white/80"
-              >
-                <option value="1">1 – เอวา (th)</option>
-                <option value="2">2 – โบ (th)</option>
-                <option value="3">3 – คุณงาม (th)</option>
-                <option value="4">4 – แม็กซ์ (th)</option>
-                <option value="5">5 – อลัน (th)</option>
-                <option value="6">6 – ไซเรน (th)</option>
-                <option value="7">7 – อลิสา (th)</option>
-                <option value="8">8 – เลโอ (th)</option>
-                <option value="9">9 – นาเดียร์ (en)</option>
-              </select>
-              <p class="mt-1 text-[11px] sm:text-xs text-gray-500">
-                * เสียง 1–8 ภาษาไทย, เสียง 9 ภาษาอังกฤษ
-              </p>
-            </div>
-          </div>
+      <!-- คำเตือนเรื่องการรองรับ -->
+      <section class="mb-4">
+        <div class="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-100 rounded-2xl p-3 sm:p-4 flex items-start gap-3">
+          <span class="mt-0.5 text-lg">💡</span>
+          <p class="text-[11px] sm:text-xs text-gray-600">
+            ระบบนี้ใช้ <strong>Web Speech API (speechSynthesis)</strong> ของเบราว์เซอร์ โดยไม่ต้องต่อ API ภายนอก<br>
+            แนะนำให้ใช้บน <strong>Google Chrome / Microsoft Edge / Android</strong> เพื่อเสียงภาษาไทยที่ดีที่สุด
+          </p>
         </div>
       </section>
 
@@ -141,7 +86,6 @@
               ความต้องการพื้นฐาน
             </h3>
             <div class="grid grid-cols-2 gap-2">
-              <!-- แถวปุ่ม -->
               <button class="quick-btn" data-text="หิวแล้วค่ะ">🍚 หิวแล้วค่ะ</button>
               <button class="quick-btn" data-text="ขอของดื่ม">🥤 ขอของดื่ม</button>
               <button class="quick-btn" data-text="ขอเข้าห้องน้ำ">🚻 ขอเข้าห้องน้ำ</button>
@@ -216,7 +160,7 @@
           </div>
         </section>
 
-        <!-- พื้นที่พิมพ์ข้อความ + แสดงเสียง + ประวัติ -->
+        <!-- พื้นที่พิมพ์ข้อความ + แสดงประวัติ -->
         <section class="space-y-4">
           <!-- กล่องพิมพ์ข้อความ -->
           <div class="bg-white/80 rounded-2xl border border-purple-100 p-4 shadow-sm">
@@ -232,39 +176,46 @@
             ></textarea>
 
             <div class="mt-3 flex flex-wrap gap-2 justify-between items-center">
-              <button
-                id="generateBtn"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500 shadow-sm"
-              >
-                <span>🎧 สร้างไฟล์เสียง</span>
-              </button>
-
-              <button
-                id="speakDirectBtn"
-                class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs sm:text-sm font-medium text-purple-600 bg-purple-50 hover:bg-purple-100"
-              >
-                🔊 พูดข้อความนี้ทันที
-              </button>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  id="speakDirectBtn"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500 shadow-sm"
+                >
+                  🔊 พูดข้อความนี้ทันที
+                </button>
+                <button
+                  id="stopBtn"
+                  class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-xs sm:text-sm font-medium text-red-500 bg-red-50 hover:bg-red-100"
+                >
+                  ⏹ หยุดเสียง
+                </button>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] sm:text-xs text-gray-500">
+                <span>ความเร็ว:</span>
+                <input id="rateRange" type="range" min="0.5" max="1.5" step="0.1" value="1"
+                       class="w-24 accent-purple-400">
+                <span id="rateLabel">1.0x</span>
+              </div>
             </div>
           </div>
 
-          <!-- ผลลัพธ์เสียงล่าสุด -->
+          <!-- ข้อความล่าสุด -->
           <div class="bg-white/90 rounded-2xl border border-pink-100 p-4 shadow-sm">
             <h3 class="flex items-center gap-2 text-sm sm:text-base font-semibold text-pink-700 mb-2">
               <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-pink-100">📂</span>
-              เสียงที่สร้างล่าสุด
+              ข้อความที่พูดล่าสุด
             </h3>
-            <div id="latestAudioContainer" class="space-y-2 text-sm text-gray-600">
-              <p class="text-xs text-gray-400">ยังไม่มีการสร้างเสียง</p>
+            <div id="latestTextContainer" class="space-y-2 text-sm text-gray-600">
+              <p class="text-xs text-gray-400">ยังไม่มีการพูดข้อความ</p>
             </div>
           </div>
 
-          <!-- ประวัติการสร้างเสียง -->
+          <!-- ประวัติการพูด -->
           <div class="bg-white/90 rounded-2xl border border-purple-100 p-4 shadow-sm max-h-80 overflow-y-auto">
             <div class="flex items-center justify-between mb-2">
               <h3 class="flex items-center gap-2 text-sm sm:text-base font-semibold text-purple-700">
                 <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-purple-100">🕒</span>
-                ประวัติการสร้างเสียง
+                ประวัติการพูด
               </h3>
               <button
                 id="clearHistoryBtn"
@@ -274,7 +225,7 @@
               </button>
             </div>
             <div id="historyList" class="space-y-2 text-xs sm:text-sm text-gray-700">
-              <p class="text-xs text-gray-400">ยังไม่มีประวัติการสร้างเสียง</p>
+              <p class="text-xs text-gray-400">ยังไม่มีประวัติการพูด</p>
             </div>
           </div>
         </section>
@@ -282,10 +233,7 @@
 
       <!-- footer -->
       <footer class="mt-6 pt-4 border-t border-white/70 text-center text-[11px] sm:text-xs text-gray-500">
-        พัฒนาโดย <span class="font-semibold text-purple-600">ครูกิ๊กจ้า :: กฤติยา พลหาญ</span> | 
-        <a href="https://KKClassvip.com" target="_blank" class="text-pink-500 hover:text-pink-600 underline">
-          KKClassvip.com
-        </a>
+        พัฒนาโดย <span class="font-semibold text-purple-600">ครูขจรวิทย์ แก้วสุขใส</span>
       </footer>
     </div>
   </div>
@@ -293,37 +241,24 @@
   <!-- Toast / Popup แจ้งเตือน -->
   <div id="toast"
        class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2 rounded-full text-xs sm:text-sm text-white shadow-lg bg-gray-800/90">
-    <!-- Filled by JS -->
   </div>
 
   <!-- JS ฟังก์ชันหลัก -->
   <script>
-    const TOKEN_KEY = 'botnoiToken';
-    const HISTORY_KEY = 'botnoiHistory';
+    const HISTORY_KEY = 'yourVoiceMattersHistory';
 
-    const tokenInput = document.getElementById('tokenInput');
-    const toggleTokenVisibility = document.getElementById('toggleTokenVisibility');
-    const saveTokenBtn = document.getElementById('saveTokenBtn');
-    const speakerSelect = document.getElementById('speakerSelect');
     const customText = document.getElementById('customText');
-    const generateBtn = document.getElementById('generateBtn');
     const speakDirectBtn = document.getElementById('speakDirectBtn');
-    const latestAudioContainer = document.getElementById('latestAudioContainer');
+    const stopBtn = document.getElementById('stopBtn');
+    const latestTextContainer = document.getElementById('latestTextContainer');
     const historyList = document.getElementById('historyList');
     const clearHistoryBtn = document.getElementById('clearHistoryBtn');
     const toast = document.getElementById('toast');
+    const rateRange = document.getElementById('rateRange');
+    const rateLabel = document.getElementById('rateLabel');
 
-    // โหลด Token และ History จาก localStorage
-    function loadInitialData() {
-      const storedToken = localStorage.getItem(TOKEN_KEY);
-      if (storedToken) {
-        tokenInput.value = storedToken;
-      }
+    const synth = window.speechSynthesis;
 
-      renderHistory();
-    }
-
-    // แสดง Toast
     function showToast(message, type = 'info') {
       const colorMap = {
         info: 'bg-gray-800/90',
@@ -334,35 +269,18 @@
       toast.textContent = message;
       toast.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full text-xs sm:text-sm text-white shadow-lg ' + (colorMap[type] || colorMap.info);
       toast.classList.remove('hidden');
-
       setTimeout(() => {
         toast.classList.add('hidden');
-      }, 2500);
+      }, 2200);
     }
 
-    // บันทึก Token
-    saveTokenBtn.addEventListener('click', () => {
-      const token = tokenInput.value.trim();
-      if (!token) {
-        showToast('กรุณากรอก Botnoi API Token ก่อนนะคะ', 'warning');
-        return;
-      }
-      localStorage.setItem(TOKEN_KEY, token);
-      showToast('บันทึก Token เรียบร้อยค่ะ', 'success');
-    });
+    // ตรวจภาษาจากตัวอักษร (ไทย/อังกฤษ)
+    function detectLanguage(text) {
+      const thaiRegex = /[ก-๙]/;
+      return thaiRegex.test(text) ? 'th-TH' : 'en-US';
+    }
 
-    // แสดง / ซ่อน Token
-    toggleTokenVisibility.addEventListener('click', () => {
-      if (tokenInput.type === 'password') {
-        tokenInput.type = 'text';
-        toggleTokenVisibility.textContent = '🙈 ซ่อน';
-      } else {
-        tokenInput.type = 'password';
-        toggleTokenVisibility.textContent = '👁 แสดง';
-      }
-    });
-
-    // อ่านประวัติจาก localStorage
+    // ดึงประวัติ
     function getHistory() {
       try {
         const raw = localStorage.getItem(HISTORY_KEY);
@@ -374,7 +292,7 @@
       }
     }
 
-    // บันทึกประวัติใน localStorage
+    // บันทึกประวัติ
     function saveHistory(history) {
       localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     }
@@ -383,7 +301,7 @@
     function renderHistory() {
       const history = getHistory();
       if (!history.length) {
-        historyList.innerHTML = '<p class="text-xs text-gray-400">ยังไม่มีประวัติการสร้างเสียง</p>';
+        historyList.innerHTML = '<p class="text-xs text-gray-400">ยังไม่มีประวัติการพูด</p>';
         return;
       }
 
@@ -406,194 +324,121 @@
             <strong>ข้อความ:</strong> ${item.text}
           </div>
           <div class="flex items-center justify-between mt-1">
-            <span class="text-[11px] text-purple-500">เสียง: ${item.speakerName || item.speaker}</span>
-            <div class="flex gap-1">
-              <button class="px-2 py-1 rounded-full text-[11px] bg-purple-50 text-purple-600 hover:bg-purple-100 play-history-btn" data-url="${item.audio_url}">
-                ▶ เล่น
-              </button>
-              <a href="${item.audio_url}" download class="px-2 py-1 rounded-full text-[11px] bg-pink-50 text-pink-600 hover:bg-pink-100">
-                ⬇ ดาวน์โหลด
-              </a>
-            </div>
+            <span class="text-[11px] text-purple-500">ภาษา: ${item.lang === 'th-TH' ? 'ไทย' : 'อังกฤษ'}</span>
+            <button class="px-2 py-1 rounded-full text-[11px] bg-purple-50 text-purple-600 hover:bg-purple-100 replay-btn" data-text="${item.text}">
+              ▶ พูดซ้ำ
+            </button>
           </div>
         `;
         historyList.appendChild(div);
       });
 
-      // ผูก event ปุ่มเล่นในประวัติ
-      const playBtns = historyList.querySelectorAll('.play-history-btn');
-      playBtns.forEach(btn => {
+      // ผูก event ปุ่มพูดซ้ำ
+      const replayBtns = historyList.querySelectorAll('.replay-btn');
+      replayBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const url = btn.getAttribute('data-url');
-          if (!url) return;
-          const audio = new Audio(url);
-          audio.play().catch(err => {
-            console.error(err);
-            showToast('ไม่สามารถเล่นเสียงได้', 'error');
-          });
+          const text = btn.getAttribute('data-text') || '';
+          speak(text);
         });
       });
     }
 
     // เคลียร์ประวัติ
     clearHistoryBtn.addEventListener('click', () => {
-      if (!confirm('ต้องการล้างประวัติการสร้างเสียงทั้งหมดหรือไม่?')) return;
+      if (!confirm('ต้องการล้างประวัติการพูดทั้งหมดหรือไม่?')) return;
       localStorage.removeItem(HISTORY_KEY);
       renderHistory();
       showToast('ล้างประวัติเรียบร้อยแล้ว', 'success');
     });
 
-    // ฟังก์ชันเรียก API Botnoi
-    async function callBotnoiAPI(text) {
-      const token = localStorage.getItem(TOKEN_KEY) || tokenInput.value.trim();
-      if (!token) {
-        showToast('กรุณาตั้งค่า Botnoi API Token ก่อนใช้งานค่ะ', 'error');
-        throw new Error('No token');
-      }
-
-      const speaker = speakerSelect.value || '1';
-      const lang = speaker === '9' ? 'en' : 'th';
-
-      const body = {
-        text: text,
-        speaker: speaker,
-        volume: 1,
-        speed: 1,
-        type_media: "m4a",
-        save_file: true,
-        language: lang
-      };
-
-      const res = await fetch('https://api-voice.botnoi.ai/openapi/v1/generate_audio', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Botnoi-Token': token
-        },
-        body: JSON.stringify(body)
-      });
-
-      if (!res.ok) {
-        const msg = `API Error: ${res.status}`;
-        showToast(msg, 'error');
-        throw new Error(msg);
-      }
-
-      const data = await res.json();
-      if (!data.audio_url) {
-        showToast('ไม่พบ audio_url ในผลลัพธ์', 'error');
-        throw new Error('No audio_url in response');
-      }
-
-      return { audioUrl: data.audio_url, speaker, language: lang };
-    }
-
-    // map speaker code → ชื่อเสียง
-    function getSpeakerName(code) {
-      const map = {
-        '1': 'เอวา (th)',
-        '2': 'โบ (th)',
-        '3': 'คุณงาม (th)',
-        '4': 'แม็กซ์ (th)',
-        '5': 'อลัน (th)',
-        '6': 'ไซเรน (th)',
-        '7': 'อลิสา (th)',
-        '8': 'เลโอ (th)',
-        '9': 'นาเดียร์ (en)',
-      };
-      return map[code] || code;
-    }
-
-    // อัปเดตส่วนแสดงเสียงล่าสุด
-    function updateLatestAudio(text, audioUrl, speakerCode) {
-      const speakerName = getSpeakerName(speakerCode);
-      latestAudioContainer.innerHTML = `
+    // อัปเดตข้อความล่าสุด
+    function updateLatestText(text, lang) {
+      latestTextContainer.innerHTML = `
         <p class="text-xs text-gray-500 mb-1">
           ข้อความล่าสุด: <span class="text-gray-700">${text}</span>
         </p>
-        <p class="text-xs text-purple-500 mb-1">เสียง: ${speakerName}</p>
-        <audio controls class="w-full mt-1">
-          <source src="${audioUrl}" type="audio/mp4" />
-          เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
-        </audio>
-        <div class="mt-2 flex justify-end">
-          <a href="${audioUrl}" download class="px-3 py-1 rounded-full text-xs bg-pink-50 text-pink-600 hover:bg-pink-100 inline-flex items-center gap-1">
-            ⬇ ดาวน์โหลดไฟล์เสียง
-          </a>
-        </div>
+        <p class="text-xs text-purple-500 mb-1">ภาษา: ${lang === 'th-TH' ? 'ไทย' : 'อังกฤษ'}</p>
       `;
     }
 
     // เพิ่มประวัติใหม่
-    function addToHistory(text, audioUrl, speakerCode) {
+    function addToHistory(text, lang) {
       const history = getHistory();
       history.push({
         text,
-        audio_url: audioUrl,
-        speaker: speakerCode,
-        speakerName: getSpeakerName(speakerCode),
+        lang,
         timestamp: new Date().toISOString(),
       });
       saveHistory(history);
       renderHistory();
     }
 
-    // ปุ่ม "สร้างไฟล์เสียง"
-    generateBtn.addEventListener('click', async () => {
-      const text = customText.value.trim();
-      if (!text) {
-        showToast('กรุณาพิมพ์ข้อความก่อนสร้างเสียงนะคะ', 'warning');
+    // ฟังก์ชัน speak(text) หลัก
+    function speak(text) {
+      const content = (text || '').trim();
+      if (!content) {
+        showToast('ยังไม่มีข้อความให้พูดนะครับ', 'warning');
         return;
       }
-      try {
-        showToast('กำลังสร้างไฟล์เสียง...', 'info');
-        const { audioUrl, speaker } = await callBotnoiAPI(text);
-        updateLatestAudio(text, audioUrl, speaker);
-        addToHistory(text, audioUrl, speaker);
-        showToast('สร้างไฟล์เสียงสำเร็จแล้วค่ะ', 'success');
-      } catch (err) {
-        console.error(err);
-      }
-    });
 
-    // ปุ่ม "พูดข้อความนี้ทันที" (ไม่ต้องสนใจสร้างประวัติแยก)
-    speakDirectBtn.addEventListener('click', async () => {
-      const text = customText.value.trim();
-      if (!text) {
-        showToast('กรุณาพิมพ์ข้อความก่อนนะคะ', 'warning');
+      if (!('speechSynthesis' in window)) {
+        showToast('เบราว์เซอร์นี้ไม่รองรับการพูดออกเสียง (speechSynthesis)', 'error');
         return;
       }
-      try {
-        showToast('กำลังสั่งให้พูด...', 'info');
-        const { audioUrl, speaker } = await callBotnoiAPI(text);
-        // เล่นทันที
-        const audio = new Audio(audioUrl);
-        audio.play();
-        updateLatestAudio(text, audioUrl, speaker);
-        addToHistory(text, audioUrl, speaker);
-        showToast('กำลังพูดข้อความของคุณค่ะ', 'success');
-      } catch (err) {
-        console.error(err);
-      }
-    });
 
-    // ฟังก์ชัน speak(text) สำหรับปุ่มข้อความลัด
-    async function speak(text) {
-      customText.value = text;
-      try {
-        showToast('กำลังสั่งให้พูด...', 'info');
-        const { audioUrl, speaker } = await callBotnoiAPI(text);
-        const audio = new Audio(audioUrl);
-        audio.play();
-        updateLatestAudio(text, audioUrl, speaker);
-        addToHistory(text, audioUrl, speaker);
-        showToast('กำลังพูดข้อความของคุณค่ะ', 'success');
-      } catch (err) {
-        console.error(err);
+      // หยุดเสียงเก่าก่อน
+      synth.cancel();
+
+      const lang = detectLanguage(content);
+      const rate = parseFloat(rateRange.value) || 1;
+
+      const utter = new SpeechSynthesisUtterance(content);
+      utter.lang = lang;
+      utter.rate = rate;
+      utter.pitch = 1;
+
+      // พยายามเลือก voice ให้ตรงภาษา
+      const voices = synth.getVoices();
+      const matched = voices.find(v => v.lang === lang) ||
+                      voices.find(v => v.lang.startsWith(lang.split('-')[0]));
+      if (matched) {
+        utter.voice = matched;
       }
+
+      utter.onstart = () => {
+        updateLatestText(content, lang);
+        addToHistory(content, lang);
+      };
+
+      utter.onerror = (e) => {
+        console.error('Speech error', e);
+        showToast('เกิดข้อผิดพลาดในการพูดข้อความ', 'error');
+      };
+
+      synth.speak(utter);
+      showToast('กำลังพูดข้อความของคุณค่ะ', 'success');
     }
 
-    // ผูก event ให้ปุ่ม quick-btn ทั้งหมด
+    // ปุ่มพูดจากกล่องข้อความ
+    speakDirectBtn.addEventListener('click', () => {
+      const text = customText.value;
+      speak(text);
+    });
+
+    // ปุ่มหยุดเสียง
+    stopBtn.addEventListener('click', () => {
+      if ('speechSynthesis' in window) {
+        synth.cancel();
+        showToast('หยุดเสียงแล้วค่ะ', 'info');
+      }
+    });
+
+    // ปรับ label ความเร็ว
+    rateRange.addEventListener('input', () => {
+      rateLabel.textContent = rateRange.value + 'x';
+    });
+
+    // quick buttons
     function bindQuickButtons() {
       const quickButtons = document.querySelectorAll('.quick-btn');
       quickButtons.forEach(btn => {
@@ -608,17 +453,24 @@
         );
         btn.addEventListener('click', () => {
           const text = btn.getAttribute('data-text') || btn.textContent.trim();
+          customText.value = text;
           speak(text);
         });
       });
     }
 
-    // เริ่มต้น
     document.addEventListener('DOMContentLoaded', () => {
-      loadInitialData();
       bindQuickButtons();
+      renderHistory();
+
+      // บางเบราว์เซอร์โหลด voices ล่าช้า
+      if ('speechSynthesis' in window) {
+        speechSynthesis.onvoiceschanged = () => {
+          // เรียกหนึ่งครั้งให้ ระบบโหลด voices
+          console.log('Voices loaded:', speechSynthesis.getVoices().length);
+        };
+      }
     });
   </script>
 </body>
 </html>
-# Your-Voice-Matters
